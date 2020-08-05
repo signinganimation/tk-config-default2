@@ -76,3 +76,17 @@ frameworks:
       version: v0.1.1
       type: app_store
       name: tk-framework-desktopclient
+
+  # LMV - converts files to LMV
+  tk-framework-lmv_v0.1.x:
+    location:
+      type: app_store
+      name: tk-framework-lmv
+      version: v0.1.1
+
+  # Forge
+  tk-framework-forge_v0.1.x:
+    location:
+      type: dev
+      windows_path: Z:\dev\tk-framework-forge
+      mac_path: /opt/shotgun/dev/tk-framework-forge
