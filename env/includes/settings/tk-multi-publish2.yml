@@ -492,7 +492,6 @@ settings.tk-multi-publish2.motion_builder.shot_step:
 # asset_step
 settings.tk-multi-publish2.alias.asset_step:
   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
-  # collector: "{self}/collector.py:{config}/automotive/tk-multi-publish2/collector.py"
   collector_settings:
       Work Template: alias_asset_work
   publish_plugins:
@@ -502,11 +501,6 @@ settings.tk-multi-publish2.alias.asset_step:
    - name: Upload for review
      hook: "{self}/upload_version.py"
      settings: {}
-   - name: Upload for review (LMV)
-    #  hook: "{self}/upload_version.py:{config}/automotive/tk-multi-publish2/upload_version_standalone.py"
-     hook: "{self}/upload_version.py:{engine}/tk-multi-publish2/basic/upload_version.py"
-     settings:
-       3D Version: True
    - name: Begin file versioning
      hook: "{engine}/tk-multi-publish2/basic/start_version_control.py"
      settings: {}
@@ -548,10 +542,6 @@ settings.tk-multi-publish2.vred.asset_step:
    - name: Upload for review
      hook: "{self}/upload_version.py"
      settings: {}
-   - name: Upload for review (LMV)
-     hook: "{self}/upload_version.py:{config}/automotive/tk-multi-publish2/upload_version.py"
-     settings:
-       3D Version: True
    - name: Begin file versioning
      hook: "{engine}/tk-multi-publish2/basic/start_version_control.py"
      settings: {}
