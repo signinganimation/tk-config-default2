@@ -147,7 +147,7 @@ class UploadVersionPlugin(HookBaseClass):
         :returns: True if item is valid, False otherwise.
         """
 
-        framework_lmv = self.load_framework("tk-framework-lmv_v0.1.x")
+        framework_lmv = self.load_framework("tk-framework-lmv_v0.x.x")
         if not framework_lmv:
             self.logger.error("Could not run LMV translation: missing ATF framework")
             return False
@@ -279,7 +279,7 @@ class UploadVersionPlugin(HookBaseClass):
         output_directory = None
 
         if translation_worker == "local":
-            framework_lmv = self.load_framework("tk-framework-lmv_v0.1.x")
+            framework_lmv = self.load_framework("tk-framework-lmv_v0.x.x")
             translator = framework_lmv.import_module("translator")
 
             # translate the file to lmv
@@ -354,7 +354,7 @@ class UploadVersionPlugin(HookBaseClass):
                     self.logger.error("Forge Translation failed")
 
                 # Done. Close the forge connection.
-                model_derivative.forge_client.close_connection()
+                # model_derivative.forge_client.close_connection()
 
         else:
             self.logger.error("Unknown Translation Worker Type")
@@ -371,7 +371,7 @@ class UploadVersionPlugin(HookBaseClass):
             - The path to the LMV thumbnail
         """
 
-        framework_lmv = self.load_framework("tk-framework-lmv_v0.1.x")
+        framework_lmv = self.load_framework("tk-framework-lmv_v0.x.x")
         self.logger.info("___debug_Dev___ {}".format(framework_lmv))
         translator = framework_lmv.import_module("translator")
 
