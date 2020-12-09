@@ -165,12 +165,10 @@ keys:
 
     # SketchBook supports six extension types for stills but we are using TIFF
     # You can add different formats here if you would like to add or change this
-    # .skba file is for flipbooks
     sketchbook.extension:
         type: str
         choices:
             tif: TIFF File
-            skba: SketchBook Flipbook
         default: tif
         alias: extension
 
