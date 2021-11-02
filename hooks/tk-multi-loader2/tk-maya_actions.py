@@ -338,7 +338,7 @@ def _hookup_shaders(reference_node):
 
     # if the object name matches an object in the file, connect the shaders
     for node in (cmds.ls(references=True, transforms=True) or []):
-        for (obj_pattern, shader) in shader_hookups.iteritems():
+        for (obj_pattern, shader) in shader_hookups.items():
             # get rid of namespacing
             node_base = node.split(":")[-1]
             if re.match(obj_pattern, node_base, re.IGNORECASE):
