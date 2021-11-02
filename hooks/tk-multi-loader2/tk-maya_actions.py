@@ -20,6 +20,8 @@ import maya.cmds as cmds
 import maya.mel as mel
 import sgtk
 
+from tank_vendor import six
+
 HookBaseClass = sgtk.get_hook_baseclass()
 
 
@@ -156,7 +158,7 @@ class MayaActions(HookBaseClass):
         # resolve path
         # toolkit uses utf-8 encoded strings internally and Maya API expects unicode
         # so convert the path to ensure filenames containing complex characters are supported
-        path = self.get_publish_path(sg_publish_data).decode("utf-8")
+        path = six.ensure_str(self.get_publish_path(sg_publish_data))
         
         if name == "reference":
             self._create_reference(path, sg_publish_data)
@@ -336,7 +338,7 @@ def _hookup_shaders(reference_node):
 
     # if the object name matches an object in the file, connect the shaders
     for node in (cmds.ls(references=True, transforms=True) or []):
-        for (obj_pattern, shader) in shader_hookups.iteritems():
+        for (obj_pattern, shader) in shader_hookups.items():
             # get rid of namespacing
             node_base = node.split(":")[-1]
             if re.match(obj_pattern, node_base, re.IGNORECASE):
