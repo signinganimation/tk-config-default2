@@ -51,9 +51,12 @@ engines.tk-mari.location:
   name: tk-mari
   version: v1.3.1
 engines.tk-maya.location:
-  type: app_store
-  name: tk-maya
-  version: v0.11.1
+  type: path
+  path: G:\Shared drives\signing-animation\toolkit_apps\tk-maya\v0.11.1.1
+  # type: git_branch
+  # branch: release/v0.11.1.1
+  # path: https://github.com/signinganimation/tk-maya.git
+  # version: 6b700d
 engines.tk-motionbuilder.location:
   type: app_store
   name: tk-motionbuilder
