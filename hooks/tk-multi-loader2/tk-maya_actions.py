@@ -227,6 +227,10 @@ class MayaActions(HookBaseClass):
             namespace=namespace,
         )
 
+        # reconnects published shaders to the corresponding mesh.
+        reference_node = cmds.referenceQuery(path, referenceNode=True)
+        _hookup_shaders(reference_node)
+
     def _do_import(self, path, sg_publish_data):
         """
         Create a reference with the same settings Maya would use
